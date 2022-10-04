@@ -1,0 +1,50 @@
+{
+  "hidefiles.configurationType": "local",
+  "hidefiles.globalConfig": {
+    "profiles": [
+      {
+        "name": "Default",
+        "detail": "",
+        "description": "Test",
+        "hidden": [
+          ".vscode/"
+        ]
+      },
+      {
+        "name": "Strict",
+        "detail": "Hide everything not immediately required",
+        "hidden": [
+          "$Default"
+        ]
+      },
+      {
+        "hidden": [
+          ".vscode/",
+          "node_modules/",
+          "src/react-app-env.d.ts",
+          "src/reportWebVitals.ts",
+          "src/setupTests.ts",
+          "src/App.test.tsx"
+        ],
+        "name": "React",
+        "description": "",
+        "detail": "",
+        "peek": []
+      }
+    ]
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".vscode/": true,
+    "node_modules/": true,
+    "src/react-app-env.d.ts": true,
+    "src/reportWebVitals.ts": true,
+    "src/setupTests.ts": true,
+    "src/App.test.tsx": true
+  },
+  "hidefiles.selectedProfile": "React"
+}
