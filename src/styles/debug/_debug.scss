@@ -1,0 +1,55 @@
+// =====
+$debug: '' !default;
+// =====
+
+// ==== DEBUG FUNCTIONS ====
+@function appendDebug($d: '') {
+	$debug: $debug + '» #{inspect($d)} \A\A' !global;
+	@return $debug;
+}
+
+// ==== DEBUG MIXINS ====
+@mixin updateOutput($items) {
+	.debug-container {
+		z-index: 9999;
+		position: absolute;
+		width: 60vmax;
+		max-width: 85%;
+		max-height: 80vmin;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: rgb(198, 98, 215);
+		background-color: #0a0a0a;
+		border: 2px solid #c3c3c3;
+		font-family: 'Andale Mono', monospace;
+		display: block;
+		white-space: pre-line;
+		padding: 5vh;
+		overflow-y: scroll;
+	}
+
+	body::before {
+		content: '#{$items}';
+		@extend .debug-container;
+		// position: fixed;
+		// top: -1000px;
+		// right: -1000px;
+
+		// z-index: -99999;
+		// opacity: 0;
+		// pointer-events: none;
+		// overflow: hidden;
+	}
+}
+
+@mixin append($d) {
+	$debug: appendDebug($d);
+	@include updateOutput($debug);
+}
+
+@mixin map($map) {
+	@each $item in $map {
+		@include append($item);
+	}
+}

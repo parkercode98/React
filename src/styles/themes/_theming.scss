@@ -1,0 +1,19 @@
+@use 'themes' as *;
+@use '../../layouts' as *;
+@use '../../App.module.scss' as *;
+
+@mixin set-themes($theme: null) {
+	@include App-theme($theme);
+	@include Navbar-theme($theme);
+	@include Shell-theme($theme);
+}
+
+/* Dark Theme */
+@mixin dark-theme {
+	@include set-themes($dark-theme);
+}
+
+/* Light Theme */
+@mixin light-theme {
+	@include set-themes($light-theme);
+}

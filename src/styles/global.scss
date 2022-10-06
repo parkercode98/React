@@ -1,0 +1,28 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-height: 100vh;
+	min-width: 100vw;
+	width: 100%;
+	height: 100%;
+	min-height: -webkit-fill-available;
+	overflow: hidden;
+	background: #4b4b4b;
+}
+
+/* React Root */
+#root {
+	width: 100%;
+	height: 100%;
+}

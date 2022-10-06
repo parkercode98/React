@@ -1,0 +1,8 @@
+@use './themes' as *;
+
+/* Themes */
+@include dark-theme;
+
+body.light-theme {
+	@include light-theme;
+}
