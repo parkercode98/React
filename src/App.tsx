@@ -1,15 +1,15 @@
-import { Navbar, Shell } from './layouts';
 import './App.module.scss';
+import { Navbar, Shell, Outlet } from './layouts';
 
 function App() {
-	return (
-		<div className='App'>
-			<Navbar />
-			<Shell>
-				<h1>React Base</h1>
-			</Shell>
-		</div>
-	);
+  return (
+    <div className='App'>
+      <Navbar />
+      <Shell>
+        <Outlet></Outlet>
+      </Shell>
+    </div>
+  );
 }
 
 export default App;

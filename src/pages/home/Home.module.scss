@@ -1,0 +1,15 @@
+@use 'src/styles/debug' as *;
+
+@mixin theme($theme: null) {
+	$bgc: map-get($theme, background);
+	$fgc: map-get($theme, foreground);
+
+	// @include debug-append('- Shell.modules.scss');
+
+	.Home {
+		width: 100%;
+		height: 100%;
+		background: $bgc;
+		color: $fgc;
+	}
+}

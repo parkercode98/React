@@ -1,16 +1,64 @@
 @use 'src/styles/debug' as *;
 @mixin theme($theme: null) {
-	$bgc: map-get($theme, background);
-	$fgc: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $bgc: map-get($theme, background);
+  $fgc: map-get($theme, foreground);
 
-	// @include debug-append('- Navbar.modules.scss');
+  .Navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 55px;
+    background: darken($bgc, 8%);
+    color: $fgc;
 
-	.Navbar {
-		display: flex;
-		flex-flow: row nowrap;
-		width: 100%;
-		height: 55px;
-		background: darken($bgc, 8%);
-		color: $fgc;
-	}
+    .left {
+      height: 100%;
+
+      .logo {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: $primary;
+        padding: 0 2ch;
+      }
+    }
+
+    .mid {
+      height: 100%;
+    }
+
+    .right {
+      height: 100%;
+
+      ul {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        list-style: none;
+
+        li {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1ch;
+
+          a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $fgc;
+            text-decoration: none;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
 }
